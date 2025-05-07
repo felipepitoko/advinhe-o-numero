@@ -10,6 +10,8 @@ fn main() {
     let mut end_game = false;
 
     while !end_game{
+        println!("**---------------------------------------------------**");
+        println!("I'm thinking of a number between 1 and 10...");
         let secret_number = rand::thread_rng().gen_range(1..=10);
 
         loop {
@@ -36,6 +38,8 @@ fn main() {
                 Ordering::Greater => println!("Too big!"),
                 Ordering::Equal => {
                     println!("You win!");
+                    println!("The secret number was: {}", secret_number);                    
+                    println!("**---------------------------------------------------**");
                     thread::sleep(Duration::from_secs(2));
                     break;
                 }
